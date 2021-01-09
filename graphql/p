@@ -1,0 +1,58 @@
+mutation{
+  createCourse(input: {
+    courseName:"graphql course"
+    price:87
+    stack:MOBILE
+    teachingAssists:[
+      {firstName:"khushbant"
+      lastName:"meher"
+      experience:1
+      },
+      {firstName:"boby"
+      lastName:"meher"
+      experience:4
+      }
+    ]
+  }) {
+    id,
+    courseName
+  }
+}
+
+
+{
+  "data": {
+    "createCourse": {
+      "id": "ByDh3AG49aHLXuUA2CN4N",
+      "courseName": "graphql course"
+    }
+  }
+}
+
+--------------------------
+
+query{
+  getCourse(id:"ByDh3AG49aHLXuUA2CN4N"){
+    id
+    teachingAssists{
+      experience
+    }
+  }
+}
+
+{
+  "data": {
+    "getCourse": {
+      "id": "ByDh3AG49aHLXuUA2CN4N",
+      "teachingAssists": [
+        {
+          "experience": 1
+        },
+        {
+          "experience": 4
+        }
+      ]
+    }
+  }
+}
+
